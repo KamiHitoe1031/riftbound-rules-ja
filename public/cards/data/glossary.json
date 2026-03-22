@@ -1,0 +1,351 @@
+{
+  "keywords": [
+    {
+      "en": "Accelerate",
+      "ja": "アクセラレイト",
+      "category": "cost",
+      "description_en": "An optional cost that allows a unit to enter play 'ready' (not exhausted) for an extra cost, typically 1 Energy and recycling a rune of the unit's domain.",
+      "description_ja": "追加コスト（通常1エネルギー＋ユニットのドメインのルーン1つをリサイクル）を支払うことで、ユニットをレディ状態（エグゾーストされていない状態）で場に出すことができる任意コスト。"
+    },
+    {
+      "en": "Action",
+      "ja": "アクション",
+      "category": "timing",
+      "description_en": "Allows a card (spell, unit, or ability) to be played or activated during your turn or in showdowns.",
+      "description_ja": "自分のターン中またはショーダウン中にプレイまたは発動できる。スペル、ユニット、アビリティに付与される。"
+    },
+    {
+      "en": "Ambush",
+      "ja": "アンブッシュ",
+      "category": "ability",
+      "description_en": "Allows units to be played at Reaction speed to a battlefield where you already have other units, providing tactical reinforcement options.",
+      "description_ja": "自分のユニットがいる戦場にリアクション速度でユニットをプレイできる。戦場への戦術的な増援を可能にする。"
+    },
+    {
+      "en": "Assault",
+      "ja": "アサルト",
+      "category": "combat",
+      "description_en": "Grants a unit additional Might while it is attacking in combat.",
+      "description_ja": "戦闘中、攻撃側としてのパワー（Might）が増加する。"
+    },
+    {
+      "en": "Awaken",
+      "ja": "アウェイクン",
+      "category": "phase",
+      "description_en": "The first step of your turn. Ready (untap) all of your exhausted units and runes.",
+      "description_ja": "ターンの最初のステップ。エグゾーストされている自分のユニットとルーンをすべてレディ（アンタップ）にする。"
+    },
+    {
+      "en": "Battlefield",
+      "ja": "バトルフィールド",
+      "category": "zone",
+      "description_en": "Locations on the board that players aim to control to score points. Each player brings battlefield cards as part of their deck.",
+      "description_ja": "ポイントを獲得するために制圧を目指す盤上のロケーション。各プレイヤーはデッキの一部として戦場カードを持ち込む。"
+    },
+    {
+      "en": "Buff",
+      "ja": "バフ",
+      "category": "status",
+      "description_en": "A permanent +1 Might counter placed on a unit. If the unit doesn't have a buff, it gets a +1 Might buff counter.",
+      "description_ja": "ユニットに置かれる恒久的な+1パワーカウンター。バフを持っていないユニットがバフされると+1パワーバフカウンターを得る。"
+    },
+    {
+      "en": "Champion",
+      "ja": "チャンピオン",
+      "category": "card_type",
+      "description_en": "A special unit type. Your Chosen Champion starts face-up in your Champion Zone and can be played anytime as if it were in your hand.",
+      "description_ja": "特別なユニットタイプ。選択したチャンピオンはチャンピオンゾーンに表向きで配置され、手札にあるかのようにいつでもプレイできる。"
+    },
+    {
+      "en": "Channel",
+      "ja": "チャネル",
+      "category": "phase",
+      "description_en": "Part of the Start of Turn phase. Play two ready runes from your rune deck.",
+      "description_ja": "ターン開始フェーズの一部。ルーンデッキからルーンを2枚レディ状態でプレイする。"
+    },
+    {
+      "en": "Conquer",
+      "ja": "コンカー（制圧）",
+      "category": "action",
+      "description_en": "To take control of a Battlefield by attacking it. You score a point when you conquer a battlefield.",
+      "description_ja": "戦場を攻撃して制圧すること。戦場を制圧するとポイントを獲得する。"
+    },
+    {
+      "en": "Deathknell",
+      "ja": "デスネル",
+      "category": "trigger",
+      "description_en": "An effect that triggers when a unit with this keyword is destroyed.",
+      "description_ja": "このキーワードを持つユニットが破壊されたとき発動する効果。"
+    },
+    {
+      "en": "Deflect",
+      "ja": "ディフレクト",
+      "category": "defense",
+      "description_en": "If a card has Deflect, targeting it costs the opposing player additional Power.",
+      "description_ja": "このキーワードを持つカードを対象にするには、相手プレイヤーは追加のパワーを支払う必要がある。"
+    },
+    {
+      "en": "Domain",
+      "ja": "ドメイン",
+      "category": "attribute",
+      "description_en": "The color/faction of a card. There are six domains: Body, Calm, Chaos, Fury, Mind, and Order, plus Colorless.",
+      "description_ja": "カードの属性（色）。Body、Calm、Chaos、Fury、Mind、Orderの6ドメインと無色（Colorless）がある。"
+    },
+    {
+      "en": "Energy",
+      "ja": "エネルギー",
+      "category": "resource",
+      "description_en": "The primary resource cost for playing cards. Paid by exhausting (tapping) runes.",
+      "description_ja": "カードをプレイするための主要なリソースコスト。ルーンをエグゾースト（タップ）して支払う。"
+    },
+    {
+      "en": "Exhaust",
+      "ja": "エグゾースト",
+      "category": "action",
+      "description_en": "To tap/use a card, turning it sideways. Exhausted cards cannot be used again until they are readied (during Awaken).",
+      "description_ja": "カードをタップ（横向きに）すること。エグゾーストされたカードはアウェイクンでレディになるまで再使用できない。"
+    },
+    {
+      "en": "Ganking",
+      "ja": "ガンキング",
+      "category": "movement",
+      "description_en": "Allows a unit to move directly from one battlefield to another, bypassing the need to return to the base first.",
+      "description_ja": "ベースに戻ることなく、戦場から別の戦場に直接移動できる。"
+    },
+    {
+      "en": "Gear",
+      "ja": "ギア",
+      "category": "card_type",
+      "description_en": "Equipment cards that can be attached to units to enhance their abilities.",
+      "description_ja": "ユニットに装着してその能力を強化する装備カード。"
+    },
+    {
+      "en": "Hidden",
+      "ja": "ヒドゥン",
+      "category": "ability",
+      "description_en": "Cards with Hidden can be played face down at a controlled battlefield by paying a Power cost. They can be activated as a Reaction for 0 cost. If the battlefield is lost, the hidden card is trashed.",
+      "description_ja": "パワーコストを支払い、制御中の戦場に裏向きでプレイできる。コスト0のリアクションとして発動可能。戦場を失った場合、ヒドゥンカードはトラッシュされる。"
+    },
+    {
+      "en": "Hold",
+      "ja": "ホールド（保持）",
+      "category": "scoring",
+      "description_en": "Having a unit on a battlefield at the start of your turn. You score a point for each battlefield you hold.",
+      "description_ja": "ターン開始時に戦場にユニットがいる状態。保持している各戦場からポイントを獲得する。"
+    },
+    {
+      "en": "Kill",
+      "ja": "キル（撃破）",
+      "category": "action",
+      "description_en": "To destroy a card, sending it to the trash pile.",
+      "description_ja": "カードを破壊してトラッシュに送ること。"
+    },
+    {
+      "en": "Legend",
+      "ja": "レジェンド",
+      "category": "card_type",
+      "description_en": "Your champion legend card that defines your deck's domain identity. It determines your options for the chosen champion.",
+      "description_ja": "デッキのドメイン方針を定義するチャンピオンレジェンドカード。選択チャンピオンの選択肢を決定する。"
+    },
+    {
+      "en": "Legion",
+      "ja": "レギオン",
+      "category": "trigger",
+      "description_en": "Triggers powerful abilities if you've already played another card that turn.",
+      "description_ja": "そのターンに既に別のカードをプレイしている場合に強力な効果が発動する。"
+    },
+    {
+      "en": "Might",
+      "ja": "マイト（パワー）",
+      "category": "stat",
+      "description_en": "A unit's combat strength. Used to deal damage to opposing units during showdowns.",
+      "description_ja": "ユニットの戦闘力。ショーダウン中に相手ユニットにダメージを与えるために使用する。"
+    },
+    {
+      "en": "Mighty",
+      "ja": "マイティ",
+      "category": "status",
+      "description_en": "A unit is considered Mighty if it has 5 or more Might (including temporary increases).",
+      "description_ja": "パワーが5以上（一時的な増加を含む）のユニットはマイティとみなされる。"
+    },
+    {
+      "en": "Predict",
+      "ja": "プレディクト（予見）",
+      "category": "ability",
+      "description_en": "Look at the top card of your Main Deck. You may recycle it (put it on the bottom of your rune deck).",
+      "description_ja": "メインデッキの一番上のカードを見る。それをリサイクル（ルーンデッキの一番下に置く）してもよい。"
+    },
+    {
+      "en": "Reaction",
+      "ja": "リアクション",
+      "category": "timing",
+      "description_en": "Grants permission to play or activate a card or ability at any time, even before spells and abilities resolve.",
+      "description_ja": "スペルやアビリティの解決前を含むあらゆるタイミングでカードやアビリティをプレイまたは発動できる。"
+    },
+    {
+      "en": "Recycle",
+      "ja": "リサイクル",
+      "category": "resource",
+      "description_en": "To put a rune back on the bottom of the rune deck. This provides Power (colored energy) based on the rune's domain.",
+      "description_ja": "ルーンをルーンデッキの一番下に戻すこと。ルーンのドメインに応じたパワー（色付きエネルギー）を供給する。"
+    },
+    {
+      "en": "Rune",
+      "ja": "ルーン",
+      "category": "card_type",
+      "description_en": "Resource cards from a separate 12-card side deck. Exhausting provides Energy; recycling provides colored Power.",
+      "description_ja": "12枚の別デッキから出されるリソースカード。エグゾーストでエネルギーを、リサイクルで色付きパワーを供給する。"
+    },
+    {
+      "en": "Shield",
+      "ja": "シールド",
+      "category": "combat",
+      "description_en": "Grants a unit additional Might while it is defending in combat.",
+      "description_ja": "戦闘中、防御側としてのパワー（Might）が増加する。"
+    },
+    {
+      "en": "Showdown",
+      "ja": "ショーダウン",
+      "category": "phase",
+      "description_en": "Combat encounter that occurs when units are moved to an occupied battlefield. Units fight, summing up their Might to deal damage.",
+      "description_ja": "ユニットが占領されている戦場に移動した時に発生する戦闘。ユニットはパワーの合計でダメージを与え合う。"
+    },
+    {
+      "en": "Spell",
+      "ja": "スペル",
+      "category": "card_type",
+      "description_en": "Non-permanent cards that have immediate effects when played.",
+      "description_ja": "プレイ時に即座に効果を発揮する非永続カード。"
+    },
+    {
+      "en": "Tank",
+      "ja": "タンク",
+      "category": "combat",
+      "description_en": "Units with Tank must be targeted first by opposing units in combat.",
+      "description_ja": "タンクを持つユニットは戦闘中に相手ユニットから優先的に攻撃される。"
+    },
+    {
+      "en": "Trash",
+      "ja": "トラッシュ",
+      "category": "zone",
+      "description_en": "The discard pile where destroyed or used cards go.",
+      "description_ja": "破壊されたカードや使用済みカードが送られる捨て札置き場。"
+    },
+    {
+      "en": "Unit",
+      "ja": "ユニット",
+      "category": "card_type",
+      "description_en": "Creature cards that can be played to the board, moved to battlefields, and fight in showdowns.",
+      "description_ja": "盤上にプレイし、戦場に移動させ、ショーダウンで戦わせるクリーチャーカード。"
+    },
+    {
+      "en": "Vision",
+      "ja": "ヴィジョン",
+      "category": "ability",
+      "description_en": "When this unit is at a battlefield, you may look at Hidden cards at that battlefield.",
+      "description_ja": "このユニットが戦場にいるとき、その戦場のヒドゥンカードを見ることができる。"
+    }
+  ],
+  "domains": [
+    {
+      "en": "Body",
+      "ja": "ボディ",
+      "color": "#8B4513",
+      "description_ja": "肉体・自然を司るドメイン。ユニットの耐久力や回復に長ける。"
+    },
+    {
+      "en": "Calm",
+      "ja": "カーム",
+      "color": "#4169E1",
+      "description_ja": "冷静・知性を司るドメイン。コントロールやカウンターに長ける。"
+    },
+    {
+      "en": "Chaos",
+      "ja": "カオス",
+      "color": "#DC143C",
+      "description_ja": "混沌・破壊を司るドメイン。除去や妨害に長ける。"
+    },
+    {
+      "en": "Fury",
+      "ja": "フューリー",
+      "color": "#FF8C00",
+      "description_ja": "憤怒・攻撃を司るドメイン。高い攻撃力とアグレッシブな戦略。"
+    },
+    {
+      "en": "Mind",
+      "ja": "マインド",
+      "color": "#9370DB",
+      "description_ja": "精神・魔法を司るドメイン。スペルやコンボに長ける。"
+    },
+    {
+      "en": "Order",
+      "ja": "オーダー",
+      "color": "#FFD700",
+      "description_ja": "秩序・防衛を司るドメイン。防御やバフに長ける。"
+    },
+    {
+      "en": "Colorless",
+      "ja": "無色",
+      "color": "#808080",
+      "description_ja": "特定のドメインに属さないカード。どのデッキにも採用可能。"
+    }
+  ],
+  "sets": [
+    {
+      "id": "OGN",
+      "en": "Origins",
+      "ja": "オリジンズ",
+      "description_ja": "Riftbound最初のセット。ゲームの基礎となるカード群。"
+    },
+    {
+      "id": "PRV",
+      "en": "Proving Grounds",
+      "ja": "プルービング・グラウンズ",
+      "description_ja": "入門用スターターセット。2〜4人対戦用の基本セット。"
+    },
+    {
+      "id": "SPF",
+      "en": "Spiritforged",
+      "ja": "スピリットフォージド",
+      "description_ja": "第2弾拡張セット。"
+    },
+    {
+      "id": "UNL",
+      "en": "Unleashed",
+      "ja": "アンリーシュド",
+      "description_ja": "第3弾拡張セット。2026年3月発売。"
+    }
+  ],
+  "card_types": [
+    {
+      "en": "Unit",
+      "ja": "ユニット",
+      "description_ja": "バトルフィールドに移動させて戦闘を行うクリーチャーカード。"
+    },
+    {
+      "en": "Spell",
+      "ja": "スペル",
+      "description_ja": "使い切りの効果カード。ActionやReactionのタイミングで使用。"
+    },
+    {
+      "en": "Gear",
+      "ja": "ギア",
+      "description_ja": "ユニットに装着して能力を強化する装備カード。"
+    },
+    {
+      "en": "Legend",
+      "ja": "レジェンド",
+      "description_ja": "デッキの指針となるチャンピオンレジェンドカード。"
+    },
+    {
+      "en": "Battlefield",
+      "ja": "バトルフィールド",
+      "description_ja": "制圧してポイントを獲得するためのロケーションカード。"
+    },
+    {
+      "en": "Rune",
+      "ja": "ルーン",
+      "description_ja": "エネルギーとパワーを供給するリソースカード。"
+    }
+  ]
+}

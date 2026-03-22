@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Riftbound TCGのゲームキーワード・用語集。ドメイン、カードタイプ、キーワードの日本語翻訳と解説。">
+    <title>用語集 | Riftbound カード翻訳ギャラリー</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ナビゲーション -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">⚔</span>
+                <span class="logo-text">Riftbound<span class="logo-sub">翻訳</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link" id="nav-cards">カードギャラリー</a>
+                <a href="glossary.html" class="nav-link active" id="nav-glossary">用語集</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <section class="glossary-section">
+        <div class="glossary-header">
+            <h1 class="glossary-title">用語集・キーワード翻訳</h1>
+            <p class="glossary-subtitle">Riftbound TCGのゲーム用語とキーワードの英日対訳・解説</p>
+        </div>
+
+        <!-- ドメインセクション -->
+        <div class="glossary-category" id="section-domains">
+            <h2 class="glossary-category-title">🎨 ドメイン（属性）</h2>
+            <div class="domain-grid" id="domain-grid"></div>
+        </div>
+
+        <!-- カードタイプセクション -->
+        <div class="glossary-category" id="section-types">
+            <h2 class="glossary-category-title">🃏 カードタイプ</h2>
+            <div class="glossary-grid" id="type-grid"></div>
+        </div>
+
+        <!-- セットセクション -->
+        <div class="glossary-category" id="section-sets">
+            <h2 class="glossary-category-title">📦 セット</h2>
+            <div class="glossary-grid" id="set-grid"></div>
+        </div>
+
+        <!-- キーワードセクション -->
+        <div class="glossary-category" id="section-keywords">
+            <h2 class="glossary-category-title">⚡ ゲームキーワード</h2>
+            <div class="glossary-grid" id="keyword-grid"></div>
+        </div>
+
+        <!-- ゲームの基本ルール -->
+        <div class="glossary-category" id="section-rules">
+            <h2 class="glossary-category-title">📖 基本ルール概要</h2>
+            <div class="glossary-grid">
+                <div class="glossary-item">
+                    <div class="glossary-term-row">
+                        <span class="glossary-en">Objective</span>
+                        <span class="glossary-ja">ゲーム目標</span>
+                    </div>
+                    <p class="glossary-desc-ja">8ポイント（チーム戦では11ポイント）を先に獲得したプレイヤーの勝利。ポイントは戦場の制圧（Conquer）と保持（Hold）で獲得する。</p>
+                </div>
+                <div class="glossary-item">
+                    <div class="glossary-term-row">
+                        <span class="glossary-en">Deck Building</span>
+                        <span class="glossary-ja">デッキ構築</span>
+                    </div>
+                    <p class="glossary-desc-ja">メインデッキ40枚 + ルーンデッキ12枚 + 戦場カード3枚。レジェンドカードが決めるドメインに従ってデッキを構築する。</p>
+                </div>
+                <div class="glossary-item">
+                    <div class="glossary-term-row">
+                        <span class="glossary-en">Turn Structure</span>
+                        <span class="glossary-ja">ターン構造</span>
+                    </div>
+                    <p class="glossary-desc-ja">①アウェイクン（レディ化）→ ②ホールド（ポイント獲得）→ ③チャネル（ルーン配置）→ ④ドロー → ⑤アクションフェーズ → ⑥ターン終了</p>
+                </div>
+                <div class="glossary-item">
+                    <div class="glossary-term-row">
+                        <span class="glossary-en">Showdown</span>
+                        <span class="glossary-ja">ショーダウン</span>
+                    </div>
+                    <p class="glossary-desc-ja">ユニットを敵が占拠している戦場に移動させると発生する戦闘。双方のユニットのMightの合計でダメージを与え合い、生き残った側が戦場を制圧する。</p>
+                </div>
+                <div class="glossary-item">
+                    <div class="glossary-term-row">
+                        <span class="glossary-en">Resource System</span>
+                        <span class="glossary-ja">リソースシステム</span>
+                    </div>
+                    <p class="glossary-desc-ja">ルーンはエグゾースト（タップ）するとエネルギー1を供給。リサイクル（デッキに戻す）するとそのドメインのパワーを供給する。</p>
+                </div>
+                <div class="glossary-item">
+                    <div class="glossary-term-row">
+                        <span class="glossary-en">Final Point Rule</span>
+                        <span class="glossary-ja">最終ポイントルール</span>
+                    </div>
+                    <p class="glossary-desc-ja">最後の8点目は、その同じターンに他のすべての戦場からもポイントを獲得している場合のみ、単一の戦場の制圧で獲得できる。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">
+                Riftbound™は Riot Games, Inc. の商標です。このサイトは非公式のファンプロジェクトです。
+            </p>
+            <p class="footer-text footer-sub">
+                カード画像・データは © Riot Games, Inc. に帰属します。
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 用語集データの読み込みと表示
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const res = await fetch('data/glossary.json');
+                if (!res.ok) throw new Error('用語集データが見つかりません');
+                const glossary = await res.json();
+                renderGlossary(glossary);
+            } catch (err) {
+                console.error('用語集の読み込みエラー:', err);
+            }
+        });
+
+        function renderGlossary(data) {
+            // ドメイン表示
+            const domainGrid = document.getElementById('domain-grid');
+            if (data.domains) {
+                domainGrid.innerHTML = data.domains.map(d => `
+                    <div class="domain-card">
+                        <div class="domain-color-swatch" style="background:${d.color}"></div>
+                        <div class="domain-name-en">${d.en}</div>
+                        <div class="domain-name-ja">${d.ja}</div>
+                        <div class="domain-desc">${d.description_ja}</div>
+                    </div>
+                `).join('');
+            }
+
+            // カードタイプ表示
+            const typeGrid = document.getElementById('type-grid');
+            if (data.card_types) {
+                typeGrid.innerHTML = data.card_types.map(t => `
+                    <div class="glossary-item">
+                        <div class="glossary-term-row">
+                            <span class="glossary-en">${t.en}</span>
+                            <span class="glossary-ja">${t.ja}</span>
+                        </div>
+                        <p class="glossary-desc-ja">${t.description_ja}</p>
+                    </div>
+                `).join('');
+            }
+
+            // セット表示
+            const setGrid = document.getElementById('set-grid');
+            if (data.sets) {
+                setGrid.innerHTML = data.sets.map(s => `
+                    <div class="glossary-item">
+                        <div class="glossary-term-row">
+                            <span class="glossary-en">${s.en}</span>
+                            <span class="glossary-ja">${s.ja}</span>
+                            <span class="glossary-category-badge">${s.id}</span>
+                        </div>
+                        <p class="glossary-desc-ja">${s.description_ja}</p>
+                    </div>
+                `).join('');
+            }
+
+            // キーワード表示
+            const keywordGrid = document.getElementById('keyword-grid');
+            if (data.keywords) {
+                keywordGrid.innerHTML = data.keywords.map(kw => `
+                    <div class="glossary-item">
+                        <div class="glossary-term-row">
+                            <span class="glossary-en">${kw.en}</span>
+                            <span class="glossary-ja">${kw.ja}</span>
+                            <span class="glossary-category-badge">${kw.category}</span>
+                        </div>
+                        <p class="glossary-desc-en">${kw.description_en}</p>
+                        <p class="glossary-desc-ja">${kw.description_ja}</p>
+                    </div>
+                `).join('');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -123,6 +123,37 @@ body {
   border: 1px solid rgba(188, 140, 255, 0.2);
 }
 
+/* ヘッダーナビゲーション（ルールブック/カードギャラリー切替） */
+.header-nav {
+  display: flex;
+  gap: 4px;
+  margin-left: 16px;
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+  padding: 3px;
+  border: 1px solid var(--border-color);
+}
+
+.header-nav .nav-link {
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.header-nav .nav-link:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.header-nav .nav-link.active {
+  background: var(--gradient-accent);
+  color: white;
+}
+
 .header-controls {
   display: flex;
   align-items: center;

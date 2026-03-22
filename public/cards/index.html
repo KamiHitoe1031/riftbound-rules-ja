@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Riftbound（リーグ・オブ・レジェンド TCG）カードテキスト日本語翻訳ギャラリー。全カードの画像と翻訳テキストを確認できます。">
+    <title>Riftbound カード翻訳ギャラリー | LoL TCG 日本語訳</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ========== ナビゲーション ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">⚔</span>
+                <span class="logo-text">Riftbound<span class="logo-sub">翻訳</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="../" class="nav-link" id="nav-rules">📖 ルールブック</a>
+                <a href="index.html" class="nav-link active" id="nav-cards">カードギャラリー</a>
+                <a href="glossary.html" class="nav-link" id="nav-glossary">用語集</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== ヒーローセクション ========== -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Riftbound カード翻訳</h1>
+            <p class="hero-subtitle">LoL TCGの全カードテキストを日本語で確認</p>
+            <div class="hero-stats" id="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-total">-</span>
+                    <span class="stat-label">総カード数</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-sets">-</span>
+                    <span class="stat-label">セット数</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="stat-domains">-</span>
+                    <span class="stat-label">ドメイン</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== フィルター・検索バー ========== -->
+    <section class="filters-section" id="filters-section">
+        <div class="filters-container">
+            <!-- 検索バー -->
+            <div class="search-bar">
+                <div class="search-input-wrapper">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="text" id="search-input" placeholder="カード名やテキストで検索..." autocomplete="off">
+                    <button class="search-clear" id="search-clear" aria-label="検索をクリア">×</button>
+                </div>
+            </div>
+
+            <!-- フィルターボタン群 -->
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label class="filter-label">タイプ</label>
+                    <div class="filter-chips" id="filter-type"></div>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">ドメイン</label>
+                    <div class="filter-chips" id="filter-domain"></div>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">セット</label>
+                    <div class="filter-chips" id="filter-set"></div>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label">レアリティ</label>
+                    <div class="filter-chips" id="filter-rarity"></div>
+                </div>
+            </div>
+
+            <!-- 表示切替・結果数 -->
+            <div class="filter-actions">
+                <span class="result-count" id="result-count">0 枚のカード</span>
+                <div class="view-toggle">
+                    <button class="view-btn active" id="view-grid" aria-label="グリッド表示">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                    </button>
+                    <button class="view-btn" id="view-list" aria-label="リスト表示">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="10" width="18" height="4" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/></svg>
+                    </button>
+                </div>
+                <button class="btn-reset" id="btn-reset">フィルタリセット</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== カードギャラリー ========== -->
+    <main class="gallery-section">
+        <div class="card-grid" id="card-grid">
+            <!-- カードはJSで動的生成 -->
+        </div>
+        <div class="loading-indicator" id="loading">
+            <div class="spinner"></div>
+            <p>カードデータを読み込み中...</p>
+        </div>
+        <div class="no-results" id="no-results" style="display:none;">
+            <p class="no-results-icon">🔍</p>
+            <p class="no-results-text">該当するカードが見つかりませんでした</p>
+            <p class="no-results-hint">フィルター条件を変更してみてください</p>
+        </div>
+    </main>
+
+    <!-- ========== カード詳細モーダル ========== -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal" id="card-modal">
+            <button class="modal-close" id="modal-close" aria-label="閉じる">×</button>
+            <div class="modal-body">
+                <div class="modal-image-wrapper">
+                    <img class="modal-card-image" id="modal-image" alt="カード画像" loading="lazy">
+                </div>
+                <div class="modal-info">
+                    <div class="modal-header">
+                        <h2 class="modal-card-name" id="modal-name"></h2>
+                        <span class="modal-card-code" id="modal-code"></span>
+                    </div>
+                    <div class="modal-meta" id="modal-meta"></div>
+                    <div class="modal-text-section">
+                        <h3 class="modal-section-title">
+                            <span class="section-icon">🇺🇸</span> 英語テキスト
+                        </h3>
+                        <div class="modal-ability-text" id="modal-ability-en"></div>
+                    </div>
+                    <div class="modal-text-section translation-section">
+                        <h3 class="modal-section-title">
+                            <span class="section-icon">🇯🇵</span> 日本語翻訳
+                        </h3>
+                        <div class="modal-ability-text" id="modal-ability-ja"></div>
+                    </div>
+                    <div class="modal-text-section flavor-section" id="modal-flavor-section">
+                        <h3 class="modal-section-title">
+                            <span class="section-icon">📜</span> フレーバーテキスト
+                        </h3>
+                        <div class="modal-flavor-text" id="modal-flavor"></div>
+                    </div>
+                    <div class="modal-keywords" id="modal-keywords"></div>
+                    <div class="modal-footer" id="modal-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== フッター ========== -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">
+                Riftbound™は Riot Games, Inc. の商標です。このサイトは非公式のファンプロジェクトです。
+            </p>
+            <p class="footer-text footer-sub">
+                カード画像・データは © Riot Games, Inc. に帰属します。
+            </p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
