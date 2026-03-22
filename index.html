@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riftbound Core Rules v1.1 - 日本語翻訳</title>
+  <meta name="description" content="Riftbound Core Rules v1.1 の英語原文と日本語翻訳を並列表示。キーワード英語/日本語切替機能付き。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="site-title">
+          <span class="title-icon">⚔️</span>
+          Riftbound Core Rules v1.1
+        </h1>
+        <span class="subtitle">日本語翻訳</span>
+      </div>
+      <div class="header-controls">
+        <div class="toggle-group">
+          <label class="toggle-label" for="keyword-toggle">キーワード:</label>
+          <button id="keyword-toggle" class="toggle-btn" data-mode="en" aria-label="キーワード言語切替">
+            <span class="toggle-option active" data-value="en">English</span>
+            <span class="toggle-option" data-value="ja">日本語</span>
+          </button>
+        </div>
+        <div class="toggle-group">
+          <label class="toggle-label" for="sync-toggle">同期スクロール:</label>
+          <button id="sync-toggle" class="toggle-btn active" aria-label="同期スクロール切替">
+            <span class="toggle-icon">🔗</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ナビゲーション -->
+  <nav class="sidebar" id="sidebar">
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="メニュー切替">☰</button>
+    <div class="sidebar-content">
+      <h2 class="nav-title">目次</h2>
+      <ul class="nav-list" id="nav-list">
+        <!-- JavaScriptで動的に生成 -->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main class="main-content" id="main-content">
+    <div class="content-wrapper">
+      <!-- 左カラム: 英語原文 -->
+      <div class="column column-en" id="column-en">
+        <div class="column-header">
+          <h2>🇬🇧 Original (English)</h2>
+        </div>
+        <div class="column-body" id="content-en">
+          <!-- 動的に生成 -->
+        </div>
+      </div>
+
+      <!-- 右カラム: 日本語翻訳 -->
+      <div class="column column-ja" id="column-ja">
+        <div class="column-header">
+          <h2>🇯🇵 翻訳 (日本語)</h2>
+        </div>
+        <div class="column-body" id="content-ja">
+          <!-- 動的に生成 -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ページトップへ戻るボタン -->
+  <button class="back-to-top" id="back-to-top" aria-label="ページトップへ">↑</button>
+
+  <!-- ローディング -->
+  <div class="loading-overlay" id="loading">
+    <div class="loading-spinner"></div>
+    <p>翻訳データを読み込み中...</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
