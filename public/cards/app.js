@@ -166,6 +166,14 @@ function initEventListeners() {
     // フィルタリセット
     document.getElementById('btn-reset').addEventListener('click', resetFilters);
     
+    // フィルター折りたたみ（モバイル）
+    const filterToggle = document.getElementById('filter-toggle');
+    if (filterToggle) {
+        filterToggle.addEventListener('click', () => {
+            document.getElementById('filters-section').classList.toggle('filters-open');
+        });
+    }
+
     // モーダル閉じる
     document.getElementById('modal-close').addEventListener('click', closeModal);
     document.getElementById('modal-overlay').addEventListener('click', (e) => {

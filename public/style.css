@@ -548,6 +548,13 @@ body.keywords-ja .keyword-ja {
 }
 
 /* ===================================
+   モバイルタブバー（原文/翻訳切替）
+   =================================== */
+.mobile-tab-bar {
+  display: none;
+}
+
+/* ===================================
    レスポンシブ対応
    =================================== */
 @media (max-width: 1024px) {
@@ -586,6 +593,10 @@ body.keywords-ja .keyword-ja {
     display: none;
   }
 
+  .header-nav {
+    display: none;
+  }
+
   .header-controls {
     gap: 10px;
   }
@@ -600,6 +611,56 @@ body.keywords-ja .keyword-ja {
 
   .rule-text {
     font-size: 0.82rem;
+  }
+
+  /* モバイルタブバー表示 */
+  .mobile-tab-bar {
+    display: flex;
+    position: sticky;
+    top: var(--header-height);
+    z-index: 50;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0;
+  }
+
+  .mobile-tab {
+    flex: 1;
+    padding: 10px 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-ja);
+  }
+
+  .mobile-tab:hover {
+    color: var(--text-primary);
+    background: var(--bg-hover);
+  }
+
+  .mobile-tab.active {
+    color: var(--accent-blue);
+    border-bottom-color: var(--accent-blue);
+    background: rgba(88, 166, 255, 0.06);
+  }
+
+  /* タブ切替によるカラム表示制御 */
+  .column {
+    display: none;
+  }
+
+  .column.mobile-active {
+    display: flex;
+  }
+
+  /* タブバーと重複するカラムヘッダーを非表示 */
+  .column-header {
+    display: none;
   }
 }
 

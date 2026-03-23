@@ -227,6 +227,23 @@ function setupEventListeners() {
       toggleSidebar();
     }
   });
+
+  // モバイルタブ切替
+  const tabBar = document.getElementById('mobile-tab-bar');
+  if (tabBar) {
+    tabBar.addEventListener('click', (e) => {
+      const tab = e.target.closest('.mobile-tab');
+      if (!tab) return;
+      const target = tab.dataset.target;
+      tabBar.querySelectorAll('.mobile-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('column-en').classList.toggle('mobile-active', target === 'en');
+      document.getElementById('column-ja').classList.toggle('mobile-active', target === 'ja');
+    });
+  }
+
+  // 初期状態: モバイル幅なら日本語カラムを表示
+  initMobileTab();
 }
 
 /**
@@ -306,6 +323,25 @@ function handleResize() {
   } else if (!state.sidebarOpen) {
     elements.sidebar.classList.add('collapsed');
     elements.mainContent.classList.add('expanded');
+  }
+  initMobileTab();
+}
+
+/**
+ * モバイルタブの初期化・リサイズ対応
+ */
+function initMobileTab() {
+  const colEn = document.getElementById('column-en');
+  const colJa = document.getElementById('column-ja');
+  if (window.innerWidth <= 768) {
+    // モバイル: アクティブなタブに合わせて表示
+    if (!colEn.classList.contains('mobile-active') && !colJa.classList.contains('mobile-active')) {
+      colJa.classList.add('mobile-active');
+    }
+  } else {
+    // PC: 両カラム表示に戻す
+    colEn.classList.remove('mobile-active');
+    colJa.classList.remove('mobile-active');
   }
 }
 

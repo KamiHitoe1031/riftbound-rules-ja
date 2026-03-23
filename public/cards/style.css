@@ -1078,24 +1078,77 @@ button {
     line-height: 1.5;
 }
 
+/* ========== フィルター折りたたみボタン（モバイル用） ========== */
+.filter-toggle-btn {
+    display: none;
+}
+
 /* ========== レスポンシブ ========== */
 @media (max-width: 768px) {
     .hero-stats {
         gap: 24px;
     }
-    
+
     .stat-number {
         font-size: 1.5rem;
     }
-    
+
+    /* フィルター折りたたみ */
+    .filter-toggle-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        width: 100%;
+        padding: 8px 14px;
+        margin-bottom: 8px;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        background: var(--bg-surface);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        font-family: inherit;
+    }
+
+    .filter-toggle-btn:hover {
+        color: var(--text-primary);
+        background: var(--bg-card-hover);
+        border-color: rgba(255,255,255,0.15);
+    }
+
+    .filter-toggle-icon {
+        font-size: 0.7rem;
+        transition: transform var(--transition-fast);
+    }
+
+    .filters-section.filters-open .filter-toggle-icon {
+        transform: rotate(180deg);
+    }
+
     .filter-row {
+        display: none;
         flex-direction: column;
         gap: 12px;
     }
-    
+
+    .filters-section.filters-open .filter-row {
+        display: flex;
+    }
+
     .filter-group {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    /* ナビリンク縮小 */
+    .nav-links {
+        gap: 2px;
+    }
+    .nav-link {
+        padding: 8px 10px;
+        font-size: 0.75rem;
     }
     
     .card-grid {
