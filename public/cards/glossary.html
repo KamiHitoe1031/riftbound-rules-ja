@@ -18,10 +18,11 @@
                 <span class="logo-icon">⚔</span>
                 <span class="logo-text">Riftbound<span class="logo-sub">翻訳</span></span>
             </a>
-            <div class="nav-links">
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="メニュー">☰</button>
+            <div class="nav-links" id="nav-links">
                 <a href="../" class="nav-link" id="nav-rules">📖 ルールブック</a>
-                <a href="index.html" class="nav-link" id="nav-cards">カードギャラリー</a>
-                <a href="glossary.html" class="nav-link active" id="nav-glossary">用語集</a>
+                <a href="index.html" class="nav-link" id="nav-cards">🃏 カードギャラリー</a>
+                <a href="glossary.html" class="nav-link active" id="nav-glossary">📚 用語集</a>
             </div>
         </div>
     </nav>
@@ -120,6 +121,21 @@
     </footer>
 
     <script>
+        // モバイルハンバーガーメニュー
+        (function() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.getElementById('nav-links');
+            if (menuBtn && navLinks) {
+                menuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('open');
+                });
+                document.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                });
+            }
+        })();
+
         // 用語集データの読み込みと表示
         document.addEventListener('DOMContentLoaded', async () => {
             try {

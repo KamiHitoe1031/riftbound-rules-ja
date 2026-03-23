@@ -228,6 +228,19 @@ function setupEventListeners() {
     }
   });
 
+  // モバイルハンバーガーメニュー
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const menuDropdown = document.getElementById('mobile-menu-dropdown');
+  if (menuBtn && menuDropdown) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuDropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', () => {
+      menuDropdown.classList.remove('open');
+    });
+  }
+
   // モバイルタブ切替
   const tabBar = document.getElementById('mobile-tab-bar');
   if (tabBar) {

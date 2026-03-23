@@ -166,6 +166,19 @@ function initEventListeners() {
     // フィルタリセット
     document.getElementById('btn-reset').addEventListener('click', resetFilters);
     
+    // モバイルハンバーガーメニュー
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('open');
+        });
+        document.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+        });
+    }
+
     // フィルター折りたたみ（モバイル）
     const filterToggle = document.getElementById('filter-toggle');
     if (filterToggle) {
