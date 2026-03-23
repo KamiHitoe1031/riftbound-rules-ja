@@ -858,11 +858,16 @@ button {
     margin-bottom: 4px;
 }
 
+/* キーワード一覧（バッジ＋※注釈） */
 .modal-keywords {
+    margin-bottom: 16px;
+}
+
+.keyword-badges {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
 .keyword-badge {
@@ -873,6 +878,25 @@ button {
     background: rgba(14,165,233,0.1);
     border: 1px solid rgba(14,165,233,0.2);
     color: var(--accent-cyan);
+}
+
+.keyword-notes {
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: var(--radius-sm);
+}
+
+.keyword-note {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    padding: 2px 0;
+}
+
+.keyword-note strong {
+    color: var(--text-secondary);
+    font-weight: 600;
 }
 
 .modal-footer {

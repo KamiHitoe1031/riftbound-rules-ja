@@ -32,6 +32,7 @@ const DOMAIN_COLORS = {
     'Colorless': '#6B7280',
 };
 
+
 // ========== 初期化 ==========
 document.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -350,16 +351,16 @@ function openModal(card) {
     // 英語アビリティテキスト（キーワードハイライト付き）
     const abilityEnEl = document.getElementById('modal-ability-en');
     if (card.abilityText) {
-        abilityEnEl.innerHTML = highlightKeywords(escapeHtml(card.abilityText));
+        abilityEnEl.innerHTML = highlightKeywords(stripIconPrefix(escapeHtml(card.abilityText)));
         abilityEnEl.parentElement.style.display = 'block';
     } else {
         abilityEnEl.parentElement.style.display = 'none';
     }
-    
+
     // 日本語翻訳テキスト
     const abilityJaEl = document.getElementById('modal-ability-ja');
     if (trans.abilityText_ja) {
-        abilityJaEl.innerHTML = highlightKeywords(escapeHtml(trans.abilityText_ja));
+        abilityJaEl.innerHTML = highlightKeywords(stripIconPrefix(escapeHtml(trans.abilityText_ja)));
         abilityJaEl.parentElement.style.display = 'block';
     } else {
         // 翻訳がない場合は自動翻訳のプレースホルダーを表示
@@ -379,14 +380,22 @@ function openModal(card) {
         flavorSection.style.display = 'none';
     }
     
-    // 検出されたキーワード一覧
+    // 検出されたキーワード一覧（バッジ＋※注釈）
     const keywordsEl = document.getElementById('modal-keywords');
     const detectedKeywords = detectKeywords(card.abilityText || '');
     if (detectedKeywords.length > 0) {
-        keywordsEl.innerHTML = detectedKeywords.map(kw => 
+        // バッジ行
+        const badges = detectedKeywords.map(kw =>
             `<span class="keyword-badge">${kw.en} → ${kw.ja}</span>`
         ).join('');
-        keywordsEl.style.display = 'flex';
+        // ※注釈行
+        const notes = detectedKeywords.map(kw =>
+            `<div class="keyword-note">※ <strong>${kw.ja}</strong>: ${escapeHtml(kw.description_ja)}</div>`
+        ).join('');
+        keywordsEl.innerHTML =
+            `<div class="keyword-badges">${badges}</div>` +
+            `<div class="keyword-notes">${notes}</div>`;
+        keywordsEl.style.display = 'block';
     } else {
         keywordsEl.style.display = 'none';
     }
@@ -509,4 +518,12 @@ function escapeHtml(str) {
 
 function escapeRegex(str) {
     return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/**
+ * :rb_xxx: タグからrb_プレフィックスを除去する
+ * 例: :rb_might: → :might:, :rb_energy_1: → :energy_1:
+ */
+function stripIconPrefix(text) {
+    return text.replace(/:rb_/g, ':');
 }
