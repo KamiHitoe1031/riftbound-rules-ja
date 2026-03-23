@@ -212,7 +212,9 @@ function renderNavigation() {
  * イベントリスナーの設定
  */
 function setupEventListeners() {
-  elements.keywordToggle.addEventListener('click', toggleKeywords);
+  if (elements.keywordToggle) {
+    elements.keywordToggle.addEventListener('click', toggleKeywords);
+  }
   elements.syncToggle.addEventListener('click', toggleSyncScroll);
   elements.sidebarToggle.addEventListener('click', toggleSidebar);
   window.addEventListener('scroll', handleScroll);
