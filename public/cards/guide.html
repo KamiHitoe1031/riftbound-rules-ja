@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Riftbound TCGの初心者向け遊び方ガイド。ゲームの基本ルール、デッキ構成、ターンの流れ、戦闘の仕組みをわかりやすく解説。">
+    <title>遊び方ガイド | Riftbound 日本語翻訳</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ナビゲーション -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-icon">⚔</span>
+                <span class="logo-text">Riftbound<span class="logo-sub">翻訳</span></span>
+            </a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="メニュー">☰</button>
+            <div class="nav-links" id="nav-links">
+                <a href="../" class="nav-link" id="nav-rules">📖 ルールブック</a>
+                <a href="index.html" class="nav-link" id="nav-cards">🃏 カードギャラリー</a>
+                <a href="glossary.html" class="nav-link" id="nav-glossary">📚 用語集</a>
+                <a href="guide.html" class="nav-link active" id="nav-guide">🎮 遊び方ガイド</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <header class="guide-hero">
+        <h1 class="guide-hero-title"><span class="hero-icon">🎮</span>遊び方ガイド</h1>
+        <p class="guide-hero-sub">初めてのRiftbound ― 基本ルールをやさしく解説</p>
+        <p class="guide-hero-meta">読了目安: 約10分</p>
+    </header>
+
+    <!-- 目次（モバイル用: 1024px以下で表示） -->
+    <details class="guide-toc-mobile">
+        <summary>目次を開く</summary>
+        <ol class="toc-list-mobile">
+            <li><a href="#overview">Riftboundとは</a></li>
+            <li><a href="#win-condition">勝利条件</a></li>
+            <li><a href="#deck-building">デッキの構成</a></li>
+            <li><a href="#domains">ドメイン（色）</a></li>
+            <li><a href="#card-types">カードの種類</a></li>
+            <li><a href="#resources">リソースシステム</a></li>
+            <li><a href="#turn-flow">ターンの流れ</a></li>
+            <li><a href="#combat">戦闘の仕組み</a></li>
+            <li><a href="#scoring">得点ルール</a></li>
+            <li><a href="#final-point">最終ポイントルール</a></li>
+            <li><a href="#next-steps">次のステップ</a></li>
+        </ol>
+    </details>
+
+    <!-- メインレイアウト -->
+    <div class="guide-layout">
+
+        <!-- 目次サイドバー（デスクトップ用: 1025px以上で表示） -->
+        <aside class="guide-toc" id="guide-toc">
+            <p class="guide-toc-title">目次</p>
+            <ul class="guide-toc-list">
+                <li><a href="#overview" class="guide-toc-link">Riftboundとは</a></li>
+                <li><a href="#win-condition" class="guide-toc-link">勝利条件</a></li>
+                <li><a href="#deck-building" class="guide-toc-link">デッキの構成</a></li>
+                <li><a href="#domains" class="guide-toc-link">ドメイン（色）</a></li>
+                <li><a href="#card-types" class="guide-toc-link">カードの種類</a></li>
+                <li><a href="#resources" class="guide-toc-link">リソースシステム</a></li>
+                <li><a href="#turn-flow" class="guide-toc-link">ターンの流れ</a></li>
+                <li><a href="#combat" class="guide-toc-link">戦闘の仕組み</a></li>
+                <li><a href="#scoring" class="guide-toc-link">得点ルール</a></li>
+                <li><a href="#final-point" class="guide-toc-link">最終ポイントルール</a></li>
+                <li><a href="#next-steps" class="guide-toc-link">次のステップ</a></li>
+            </ul>
+        </aside>
+
+        <!-- メインコンテンツ -->
+        <main class="guide-content">
+
+            <!-- 1. Riftboundとは -->
+            <section class="guide-section" id="overview">
+                <h2 class="guide-section-title"><span class="section-icon">⚔</span>Riftboundとは</h2>
+                <p>
+                    <strong>Riftbound</strong>は、League of Legendsの世界「ルーンテラ」を舞台にした対戦型トレーディングカードゲーム（TCG）です。
+                    Riot Gamesが開発し、2人のプレイヤーがそれぞれのデッキを持ち寄って対戦します。
+                </p>
+                <div class="guide-highlight">
+                    <p>
+                        このゲームの最大の特徴は<strong>「戦場（バトルフィールド）」の奪い合い</strong>です。
+                        ユニットを戦場に送り込み、制圧・保持してポイントを稼ぎ、規定スコアに先に到達したプレイヤーが勝利します。
+                        単にカードで殴り合うだけでなく、<strong>どの戦場を攻めるか・守るか</strong>という戦略的判断が勝敗を分けます。
+                    </p>
+                </div>
+            </section>
+
+            <!-- 2. 勝利条件 -->
+            <section class="guide-section" id="win-condition">
+                <h2 class="guide-section-title"><span class="section-icon">🏆</span>勝利条件</h2>
+                <div class="guide-highlight">
+                    <p><strong>8ポイント</strong>を先に獲得したプレイヤーの勝利です。（チーム戦では11ポイント）</p>
+                </div>
+                <p>
+                    ポイントの稼ぎ方は2つあります:
+                </p>
+                <div class="guide-score-grid">
+                    <div class="guide-score-card">
+                        <span class="score-icon">🏰</span>
+                        <div class="score-name">ホールド <span class="score-name-en">Hold</span></div>
+                        <div class="score-timing">ターン開始時に自動判定</div>
+                        <p class="score-desc">
+                            自分のターン開始時、あなたのユニットがいる戦場1つにつき<strong>1ポイント</strong>獲得。
+                            何もしなくても戦場にユニットを置いておくだけで毎ターン得点できます。
+                        </p>
+                    </div>
+                    <div class="guide-score-card">
+                        <span class="score-icon">⚔</span>
+                        <div class="score-name">コンカー <span class="score-name-en">Conquer</span></div>
+                        <div class="score-timing">戦場を制圧した瞬間</div>
+                        <p class="score-desc">
+                            相手がコントロールしている戦場を攻撃して制圧すると<strong>1ポイント</strong>獲得。
+                            攻め込んで奪い取ることで得点できます。
+                        </p>
+                    </div>
+                </div>
+                <div class="guide-highlight tip">
+                    <p><strong>ヒント:</strong> ホールドは「守りの得点」、コンカーは「攻めの得点」と考えるとわかりやすいです。両方をバランスよく狙いましょう。</p>
+                </div>
+            </section>
+
+            <!-- 3. デッキの構成 -->
+            <section class="guide-section" id="deck-building">
+                <h2 class="guide-section-title"><span class="section-icon">🃏</span>デッキの構成</h2>
+                <p>
+                    ゲームを始めるには、以下の4種類のカード群を用意します:
+                </p>
+                <div class="guide-deck-grid">
+                    <div class="guide-deck-item">
+                        <span class="deck-icon">👑</span>
+                        <div class="deck-name">チャンピオンレジェンド</div>
+                        <div class="deck-count">1枚</div>
+                        <div class="deck-desc">デッキの「リーダー」。使える色（ドメイン）を決定する</div>
+                    </div>
+                    <div class="guide-deck-item">
+                        <span class="deck-icon">📦</span>
+                        <div class="deck-name">メインデッキ</div>
+                        <div class="deck-count">40枚+</div>
+                        <div class="deck-desc">ユニット・スペル・ギアで構成。同名カードは最大3枚まで</div>
+                    </div>
+                    <div class="guide-deck-item">
+                        <span class="deck-icon">💎</span>
+                        <div class="deck-name">ルーンデッキ</div>
+                        <div class="deck-count">12枚</div>
+                        <div class="deck-desc">カードをプレイするためのリソースを供給する専用デッキ</div>
+                    </div>
+                    <div class="guide-deck-item">
+                        <span class="deck-icon">🗺</span>
+                        <div class="deck-name">バトルフィールド</div>
+                        <div class="deck-count">3枚</div>
+                        <div class="deck-desc">ポイントを争う戦場。対戦時にランダムで選ばれる</div>
+                    </div>
+                </div>
+                <p>
+                    メインデッキには<strong>選ばれしチャンピオン（Chosen Champion）</strong>を必ず1枚入れます。
+                    これはチャンピオンレジェンドと同じキャラクターのユニットカードで、ゲーム開始時にチャンピオンゾーンに配置されます。
+                </p>
+                <div class="guide-highlight">
+                    <p><strong>デッキの色ルール:</strong> メインデッキのすべてのカードは、チャンピオンレジェンドが持つドメイン（色）に含まれていなければなりません。無色（Colorless）のカードはどのデッキにも入れられます。</p>
+                </div>
+            </section>
+
+            <!-- 4. ドメイン（色） -->
+            <section class="guide-section" id="domains">
+                <h2 class="guide-section-title"><span class="section-icon">🎨</span>ドメイン（色）</h2>
+                <p>
+                    ドメインはカードの「色」や「属性」にあたる概念です。全7種類あり、それぞれ得意な戦い方が異なります。
+                    チャンピオンレジェンドが持つドメインが、デッキに入れられるカードの色を決定します。
+                </p>
+                <div class="guide-domain-grid">
+                    <div class="guide-domain-card" data-domain="body">
+                        <div class="domain-label">
+                            <span class="domain-en">Body</span>
+                            <span class="domain-ja">ボディ</span>
+                        </div>
+                        <p class="domain-desc">肉体・自然の力。耐久力と回復が得意。粘り強く戦場を守る</p>
+                    </div>
+                    <div class="guide-domain-card" data-domain="calm">
+                        <div class="domain-label">
+                            <span class="domain-en">Calm</span>
+                            <span class="domain-ja">カーム</span>
+                        </div>
+                        <p class="domain-desc">冷静・知性の力。コントロールとカウンターで相手を封じる</p>
+                    </div>
+                    <div class="guide-domain-card" data-domain="chaos">
+                        <div class="domain-label">
+                            <span class="domain-en">Chaos</span>
+                            <span class="domain-ja">カオス</span>
+                        </div>
+                        <p class="domain-desc">混沌・破壊の力。除去と妨害で相手の計画を崩す</p>
+                    </div>
+                    <div class="guide-domain-card" data-domain="fury">
+                        <div class="domain-label">
+                            <span class="domain-en">Fury</span>
+                            <span class="domain-ja">フューリー</span>
+                        </div>
+                        <p class="domain-desc">憤怒・攻撃の力。高いマイトで正面から叩き潰す</p>
+                    </div>
+                    <div class="guide-domain-card" data-domain="mind">
+                        <div class="domain-label">
+                            <span class="domain-en">Mind</span>
+                            <span class="domain-ja">マインド</span>
+                        </div>
+                        <p class="domain-desc">精神・魔法の力。スペルとコンボで戦局を支配する</p>
+                    </div>
+                    <div class="guide-domain-card" data-domain="order">
+                        <div class="domain-label">
+                            <span class="domain-en">Order</span>
+                            <span class="domain-ja">オーダー</span>
+                        </div>
+                        <p class="domain-desc">秩序・防衛の力。堅い守りとバフで味方を強化する</p>
+                    </div>
+                    <div class="guide-domain-card" data-domain="colorless">
+                        <div class="domain-label">
+                            <span class="domain-en">Colorless</span>
+                            <span class="domain-ja">無色</span>
+                        </div>
+                        <p class="domain-desc">特定の色に属さない汎用カード。どのデッキにも採用できる</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. カードの種類 -->
+            <section class="guide-section" id="card-types">
+                <h2 class="guide-section-title"><span class="section-icon">🗂</span>カードの種類</h2>
+                <p>Riftboundには6種類のカードタイプがあります。</p>
+                <div class="guide-type-list">
+                    <div class="guide-type-item">
+                        <span class="type-icon">⚔</span>
+                        <div class="type-info">
+                            <div class="type-name">ユニット <span class="type-name-en">Unit</span></div>
+                            <p class="type-desc">戦場に出て戦うクリーチャー。マイト（戦闘力）を持ち、戦場を制圧・防衛する主力</p>
+                        </div>
+                    </div>
+                    <div class="guide-type-item">
+                        <span class="type-icon">✨</span>
+                        <div class="type-info">
+                            <div class="type-name">スペル <span class="type-name-en">Spell</span></div>
+                            <p class="type-desc">使い切りの魔法効果。プレイしたら即座に効果を発揮し、トラッシュに送られる</p>
+                        </div>
+                    </div>
+                    <div class="guide-type-item">
+                        <span class="type-icon">🛡</span>
+                        <div class="type-info">
+                            <div class="type-name">ギア <span class="type-name-en">Gear</span></div>
+                            <p class="type-desc">ユニットに装備する強化カード。マイト上昇や特殊能力を付与する</p>
+                        </div>
+                    </div>
+                    <div class="guide-type-item">
+                        <span class="type-icon">💎</span>
+                        <div class="type-info">
+                            <div class="type-name">ルーン <span class="type-name-en">Rune</span></div>
+                            <p class="type-desc">エネルギーとパワーを生み出すリソースカード。12枚の専用デッキで管理</p>
+                        </div>
+                    </div>
+                    <div class="guide-type-item">
+                        <span class="type-icon">👑</span>
+                        <div class="type-info">
+                            <div class="type-name">レジェンド <span class="type-name-en">Legend</span></div>
+                            <p class="type-desc">デッキのリーダーとなるカード。使えるドメインを決め、固有能力を持つ</p>
+                        </div>
+                    </div>
+                    <div class="guide-type-item">
+                        <span class="type-icon">🗺</span>
+                        <div class="type-info">
+                            <div class="type-name">バトルフィールド <span class="type-name-en">Battlefield</span></div>
+                            <p class="type-desc">ポイントを争う戦場カード。固有の効果を持ち、ゲームの舞台となる</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. リソースシステム -->
+            <section class="guide-section" id="resources">
+                <h2 class="guide-section-title"><span class="section-icon">💎</span>リソースシステム</h2>
+                <p>
+                    カードをプレイするにはコストを支払う必要があります。Riftboundのリソースは<strong>ルーン</strong>から生み出されます。
+                    毎ターン、ルーンデッキから2枚をルーンプール（場）にチャネル（配置）し、そこからコストを支払います。
+                </p>
+
+                <p>ルーンからリソースを得る方法は2つあります:</p>
+
+                <div class="guide-resource-flow">
+                    <div class="guide-flow-box">
+                        <div class="flow-label">ルーンプール</div>
+                        <div class="flow-value">💎 ルーン</div>
+                    </div>
+                    <span class="guide-flow-arrow">→</span>
+                    <div class="guide-flow-box flow-highlight">
+                        <div class="flow-label">タップ（エグゾースト）</div>
+                        <div class="flow-value">⚡ エネルギー</div>
+                    </div>
+                </div>
+                <p>
+                    <strong>エネルギー</strong>はルーンをタップ（横向きに倒す）して生み出します。
+                    カードのプレイコストの大部分はエネルギーで支払います。タップしたルーンはルーンプールに残り、次のターンに再びレディ（起こす）できます。
+                </p>
+
+                <div class="guide-resource-flow">
+                    <div class="guide-flow-box">
+                        <div class="flow-label">ルーンプール</div>
+                        <div class="flow-value">💎 ルーン</div>
+                    </div>
+                    <span class="guide-flow-arrow">→</span>
+                    <div class="guide-flow-box flow-highlight">
+                        <div class="flow-label">リサイクル（デッキに戻す）</div>
+                        <div class="flow-value">🔮 パワー</div>
+                    </div>
+                </div>
+                <p>
+                    <strong>パワー</strong>はルーンをリサイクル（ルーンデッキの底に戻す）して生み出します。
+                    カードの色付きコスト部分を支払うのに必要です。リサイクルしたルーンは場から消えるので、エネルギー供給源が減る点に注意しましょう。
+                </p>
+
+                <div class="guide-highlight tip">
+                    <p><strong>ヒント:</strong> エネルギーは「汎用コスト」、パワーは「色コスト」と考えてください。強力なカードほどパワーが多く要求されるため、リサイクルのタイミングが重要です。</p>
+                </div>
+            </section>
+
+            <!-- 7. ターンの流れ -->
+            <section class="guide-section" id="turn-flow">
+                <h2 class="guide-section-title"><span class="section-icon">🔄</span>ターンの流れ</h2>
+                <p>各プレイヤーのターンは6つのフェーズで構成されます。</p>
+
+                <div class="guide-phase-flow">
+                    <div class="guide-phase-step">
+                        <span class="phase-num">1</span>
+                        <span class="phase-name">覚醒</span>
+                        <span class="phase-brief">全カードをレディに</span>
+                    </div>
+                    <span class="guide-phase-arrow">→</span>
+                    <div class="guide-phase-step">
+                        <span class="phase-num">2</span>
+                        <span class="phase-name">スコアリング</span>
+                        <span class="phase-brief">ホールドで得点</span>
+                    </div>
+                    <span class="guide-phase-arrow">→</span>
+                    <div class="guide-phase-step">
+                        <span class="phase-num">3</span>
+                        <span class="phase-name">チャネル</span>
+                        <span class="phase-brief">ルーンを2枚配置</span>
+                    </div>
+                    <span class="guide-phase-arrow">→</span>
+                    <div class="guide-phase-step">
+                        <span class="phase-num">4</span>
+                        <span class="phase-name">ドロー</span>
+                        <span class="phase-brief">1枚引く</span>
+                    </div>
+                    <span class="guide-phase-arrow">→</span>
+                    <div class="guide-phase-step">
+                        <span class="phase-num">5</span>
+                        <span class="phase-name">アクション</span>
+                        <span class="phase-brief">自由に行動</span>
+                    </div>
+                    <span class="guide-phase-arrow">→</span>
+                    <div class="guide-phase-step">
+                        <span class="phase-num">6</span>
+                        <span class="phase-name">終了</span>
+                        <span class="phase-brief">状態を整理</span>
+                    </div>
+                </div>
+
+                <details class="guide-details">
+                    <summary>① 覚醒フェーズ（Awaken Phase）</summary>
+                    <div class="details-body">
+                        <p>あなたのすべてのカードを<strong>レディ状態</strong>に戻します（タップされていたカードを起こす）。これにより、前のターンで使用したルーンやユニットを再び使えるようになります。</p>
+                    </div>
+                </details>
+                <details class="guide-details">
+                    <summary>② スコアリングステップ（Scoring Step）</summary>
+                    <div class="details-body">
+                        <p>あなたのユニットが配置されている各バトルフィールドについて、<strong>ホールド</strong>による1ポイントを獲得します。複数の戦場にユニットがいれば、戦場の数だけポイントが入ります。</p>
+                    </div>
+                </details>
+                <details class="guide-details">
+                    <summary>③ チャネルフェーズ（Channel Phase）</summary>
+                    <div class="details-body">
+                        <p>ルーンデッキの上から<strong>2枚</strong>をルーンプールに配置します。これがカードをプレイするためのリソース源になります。ルーンデッキが空の場合、チャネルはスキップされます。</p>
+                    </div>
+                </details>
+                <details class="guide-details">
+                    <summary>④ ドローフェーズ（Draw Phase）</summary>
+                    <div class="details-body">
+                        <p>メインデッキから<strong>1枚</strong>引きます。ゲームの最初のターン（先攻プレイヤーの1ターン目）でもドローできます。</p>
+                    </div>
+                </details>
+                <details class="guide-details">
+                    <summary>⑤ アクションフェーズ（Action Phase）</summary>
+                    <div class="details-body">
+                        <p>ターンのメイン部分です。以下のアクションを<strong>好きな順番で好きなだけ</strong>実行できます:</p>
+                        <p>• カードをプレイする（コストを支払ってユニット・スペル・ギアを使う）</p>
+                        <p>• ユニットを戦場に移動させる（ベースから戦場へ、または戦場間の移動）</p>
+                        <p>• 能力を起動する（カードに書かれた起動型能力を使う）</p>
+                        <p>• ターン終了を宣言する（やることがなくなったら）</p>
+                        <p>相手の戦場にユニットを送り込むと、<strong>戦闘</strong>が発生します。</p>
+                    </div>
+                </details>
+                <details class="guide-details">
+                    <summary>⑥ ターン終了フェーズ（End of Turn Phase）</summary>
+                    <div class="details-body">
+                        <p>ターン中に受けたダメージはすべて回復し、「このターンの間」と書かれた効果は失効します。ルーンプールにある未使用のリソースも消えます。そして相手のターンに移ります。</p>
+                    </div>
+                </details>
+            </section>
+
+            <!-- 8. 戦闘の仕組み -->
+            <section class="guide-section" id="combat">
+                <h2 class="guide-section-title"><span class="section-icon">⚔</span>戦闘の仕組み</h2>
+                <p>
+                    ユニットを相手がコントロールしている戦場に移動させると<strong>戦闘（Combat）</strong>が発生します。
+                    戦闘にはショーダウン（Showdown）と呼ばれる対話的なフェーズが含まれます。
+                </p>
+
+                <ol class="guide-combat-steps">
+                    <li class="guide-combat-step">
+                        <div class="step-content">
+                            <div class="step-title">ユニットを戦場へ移動</div>
+                            <p class="step-desc">アクションフェーズ中に、ベース（待機場所）からバトルフィールドへユニットを送り込みます。相手がコントロールしている戦場に移動すると戦闘開始です。</p>
+                        </div>
+                    </li>
+                    <li class="guide-combat-step">
+                        <div class="step-content">
+                            <div class="step-title">ショーダウン（対話フェーズ）</div>
+                            <p class="step-desc">両プレイヤーが交互にリアクション（スペルや能力）を使えるフェーズです。戦闘前に味方を強化したり、相手のユニットを弱体化したりできます。</p>
+                        </div>
+                    </li>
+                    <li class="guide-combat-step">
+                        <div class="step-content">
+                            <div class="step-title">戦闘ダメージの交換</div>
+                            <p class="step-desc">その戦場にいる全ユニットのマイト（戦闘力）を合計し、ダメージを与え合います。攻撃側の合計マイトが防御側のユニットに、防御側の合計マイトが攻撃側のユニットに割り振られます。</p>
+                        </div>
+                    </li>
+                    <li class="guide-combat-step">
+                        <div class="step-content">
+                            <div class="step-title">クリーンアップと制圧</div>
+                            <p class="step-desc">マイト以上のダメージを受けたユニットは破壊されます。生き残ったユニットがいる側がその戦場をコントロールします。攻撃側が制圧に成功すれば、コンカーで1ポイント獲得です。</p>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="guide-highlight">
+                    <p><strong>ポイント:</strong> 戦闘はマイトの合計で決まります。1体の大型ユニットで攻めるか、複数の小型ユニットで数を揃えるか ― 状況に応じた戦略が必要です。</p>
+                </div>
+            </section>
+
+            <!-- 9. 得点ルール -->
+            <section class="guide-section" id="scoring">
+                <h2 class="guide-section-title"><span class="section-icon">📊</span>得点ルール</h2>
+                <p>得点（スコアリング）はゲームの核心です。改めて整理しましょう。</p>
+
+                <div class="guide-highlight">
+                    <p><strong>1v1（デュエル）モードの場合:</strong></p>
+                    <p>• 勝利に必要なスコア: <strong>8ポイント</strong></p>
+                    <p>• バトルフィールド: <strong>2つ</strong>（各プレイヤーが3枚用意し、ランダムに1枚ずつ選ばれる）</p>
+                    <p>• 初期手札: <strong>4枚</strong>（マリガンで最大2枚入れ替え可能）</p>
+                </div>
+
+                <details class="guide-details">
+                    <summary>ゲーム開始の手順（セットアップ）</summary>
+                    <div class="details-body">
+                        <p>1. チャンピオンレジェンドをレジェンドゾーンに配置</p>
+                        <p>2. 選ばれしチャンピオンをチャンピオンゾーンに配置</p>
+                        <p>3. バトルフィールドを決定（各プレイヤーの3枚からランダムに1枚ずつ選出）</p>
+                        <p>4. メインデッキとルーンデッキをシャッフル</p>
+                        <p>5. ターン順をランダムに決定</p>
+                        <p>6. 各プレイヤー4枚ドロー</p>
+                        <p>7. マリガン（手札から最大2枚を入れ替え可能）</p>
+                        <p>8. 先手プレイヤーからゲーム開始</p>
+                    </div>
+                </details>
+                <details class="guide-details">
+                    <summary>後攻プレイヤーのボーナス</summary>
+                    <div class="details-body">
+                        <p>後攻プレイヤーは、最初のチャネルフェーズで通常の2枚に加えて<strong>追加で1枚</strong>（合計3枚）チャネルできます。これは先攻の有利を緩和するための補正です。</p>
+                    </div>
+                </details>
+            </section>
+
+            <!-- 10. 最終ポイントルール -->
+            <section class="guide-section" id="final-point">
+                <h2 class="guide-section-title"><span class="section-icon">⚠</span>最終ポイントルール</h2>
+                <p>
+                    あと1ポイントで勝利（7ポイントの状態）のとき、特別なルールが適用されます。
+                </p>
+                <div class="guide-highlight warning">
+                    <p><strong>最終ポイントの制限:</strong></p>
+                    <p>
+                        コンカー（制圧）で最後の1ポイントを獲得するには、
+                        <strong>そのターン中にすべてのバトルフィールドでスコアを得ていること</strong>が条件です。
+                    </p>
+                    <p>
+                        条件を満たさない場合、コンカーによるポイントは得られず、代わりに<strong>カードを1枚ドロー</strong>します。
+                    </p>
+                </div>
+                <p>
+                    一方、ホールド（保持）による得点にはこの制限はありません。
+                    ターン開始時のスコアリングステップで8ポイントに到達すれば、即座に勝利します。
+                </p>
+                <div class="guide-highlight tip">
+                    <p><strong>戦略ヒント:</strong> 最終ポイントルールがあるため、終盤はすべての戦場にユニットを配置する「全面展開」が重要になります。1つの戦場だけで勝ち切ろうとすると、このルールに引っかかることがあります。</p>
+                </div>
+            </section>
+
+            <!-- 11. 次のステップ -->
+            <section class="guide-section" id="next-steps">
+                <h2 class="guide-section-title"><span class="section-icon">🚀</span>次のステップ</h2>
+                <p>基本ルールは以上です。さらに詳しく知りたい方は、以下のページもご覧ください。</p>
+                <div class="guide-links-grid">
+                    <a href="../" class="guide-link-card">
+                        <span class="link-icon">📖</span>
+                        <div class="link-title">ルールブック全文</div>
+                        <p class="link-desc">公式ルールの英日翻訳。キーワードやエッジケースまで網羅</p>
+                    </a>
+                    <a href="index.html" class="guide-link-card">
+                        <span class="link-icon">🃏</span>
+                        <div class="link-title">カードギャラリー</div>
+                        <p class="link-desc">全カードの画像・テキスト翻訳を検索・閲覧</p>
+                    </a>
+                    <a href="glossary.html" class="guide-link-card">
+                        <span class="link-icon">📚</span>
+                        <div class="link-title">用語集</div>
+                        <p class="link-desc">ゲーム用語・キーワードの英日対訳と解説</p>
+                    </a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">
+                Riftbound™は Riot Games, Inc. の商標です。このサイトは非公式のファンプロジェクトです。
+            </p>
+            <p class="footer-text footer-sub">
+                カード画像・データは © Riot Games, Inc. に帰属します。
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // ハンバーガーメニュー
+        (function() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.getElementById('nav-links');
+            if (menuBtn && navLinks) {
+                menuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('open');
+                });
+                document.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                });
+            }
+        })();
+
+        // スムーズスクロール（目次リンク）
+        document.querySelectorAll('.guide-toc-link, .toc-list-mobile a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // モバイル目次を閉じる
+                    const mobileToc = document.querySelector('.guide-toc-mobile');
+                    if (mobileToc) mobileToc.removeAttribute('open');
+                }
+            });
+        });
+
+        // 目次の現在セクションハイライト（IntersectionObserver）
+        (function() {
+            const tocLinks = document.querySelectorAll('.guide-toc-link');
+            if (!tocLinks.length) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        tocLinks.forEach(link => {
+                            link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+                        });
+                    }
+                });
+            }, {
+                rootMargin: '-80px 0px -60% 0px',
+                threshold: 0
+            });
+
+            document.querySelectorAll('.guide-section').forEach(section => {
+                observer.observe(section);
+            });
+        })();
+    </script>
+</body>
+</html>

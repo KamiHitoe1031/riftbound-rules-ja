@@ -1278,3 +1278,759 @@ button {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
+
+/* =====================================================
+   遊び方ガイドページ専用スタイル
+   ===================================================== */
+
+/* レイアウト: 目次サイドバー + メインコンテンツ */
+.guide-layout {
+    display: flex;
+    gap: 40px;
+    max-width: var(--content-max);
+    margin: 0 auto;
+    padding: calc(var(--nav-height) + 24px) 24px 60px;
+}
+
+/* ヒーローセクション */
+.guide-hero {
+    text-align: center;
+    padding: calc(var(--nav-height) + 48px) 24px 40px;
+    background: linear-gradient(180deg, rgba(200,164,86,0.08) 0%, transparent 100%);
+    border-bottom: 1px solid rgba(200,164,86,0.12);
+}
+
+.guide-hero-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 8px;
+}
+
+.guide-hero-title .hero-icon {
+    margin-right: 8px;
+}
+
+.guide-hero-sub {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin: 0 0 16px;
+}
+
+.guide-hero-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* 目次サイドバー */
+.guide-toc {
+    position: sticky;
+    top: calc(var(--nav-height) + 24px);
+    width: 220px;
+    min-width: 220px;
+    max-height: calc(100vh - var(--nav-height) - 48px);
+    overflow-y: auto;
+    align-self: flex-start;
+}
+
+.guide-toc-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin: 0 0 12px;
+    padding: 0 8px;
+}
+
+.guide-toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.guide-toc-list li {
+    margin: 0;
+}
+
+.guide-toc-link {
+    display: block;
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    transition: all var(--transition-fast);
+}
+
+.guide-toc-link:hover {
+    color: var(--text-primary);
+    background: rgba(255,255,255,0.03);
+}
+
+.guide-toc-link.active {
+    color: var(--gold-primary);
+    border-left-color: var(--gold-primary);
+    background: rgba(200,164,86,0.06);
+}
+
+/* メインコンテンツ */
+.guide-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 860px;
+}
+
+/* セクション */
+.guide-section {
+    margin-bottom: 48px;
+    scroll-margin-top: calc(var(--nav-height) + 24px);
+}
+
+.guide-section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 8px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(200,164,86,0.2);
+}
+
+.guide-section-title .section-icon {
+    margin-right: 8px;
+}
+
+.guide-section p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin: 0 0 16px;
+}
+
+/* ハイライトボックス */
+.guide-highlight {
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    margin: 16px 0;
+    border-left: 4px solid var(--gold-primary);
+    background: rgba(200,164,86,0.06);
+}
+
+.guide-highlight p {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.guide-highlight strong {
+    color: var(--gold-light);
+}
+
+.guide-highlight.warning {
+    border-left-color: var(--domain-chaos);
+    background: rgba(204,62,80,0.08);
+}
+
+.guide-highlight.warning strong {
+    color: #f87171;
+}
+
+.guide-highlight.tip {
+    border-left-color: var(--accent-blue);
+    background: rgba(14,165,233,0.06);
+}
+
+.guide-highlight.tip strong {
+    color: #38bdf8;
+}
+
+/* デッキ構成グリッド */
+.guide-deck-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.guide-deck-item {
+    background: var(--bg-card);
+    border: 1px solid rgba(200,164,86,0.12);
+    border-radius: var(--radius-md);
+    padding: 20px 16px;
+    text-align: center;
+}
+
+.guide-deck-item .deck-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.guide-deck-item .deck-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.guide-deck-item .deck-count {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gold-primary);
+    margin-bottom: 4px;
+}
+
+.guide-deck-item .deck-desc {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ドメイングリッド */
+.guide-domain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.guide-domain-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    border-left: 4px solid var(--text-muted);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.guide-domain-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.guide-domain-card[data-domain="body"]      { border-left-color: var(--domain-body); }
+.guide-domain-card[data-domain="calm"]      { border-left-color: var(--domain-calm); }
+.guide-domain-card[data-domain="chaos"]     { border-left-color: var(--domain-chaos); }
+.guide-domain-card[data-domain="fury"]      { border-left-color: var(--domain-fury); }
+.guide-domain-card[data-domain="mind"]      { border-left-color: var(--domain-mind); }
+.guide-domain-card[data-domain="order"]     { border-left-color: var(--domain-order); }
+.guide-domain-card[data-domain="colorless"] { border-left-color: var(--domain-colorless); }
+
+.guide-domain-card .domain-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.guide-domain-card .domain-en {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.guide-domain-card .domain-ja {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.guide-domain-card .domain-desc {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* カードタイプリスト */
+.guide-type-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.guide-type-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+}
+
+.guide-type-item .type-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    width: 36px;
+    text-align: center;
+}
+
+.guide-type-item .type-info {
+    flex: 1;
+}
+
+.guide-type-item .type-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.guide-type-item .type-name-en {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-left: 6px;
+    font-weight: 400;
+}
+
+.guide-type-item .type-desc {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* リソースフロー図 */
+.guide-resource-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 24px 0;
+    flex-wrap: wrap;
+}
+
+.guide-flow-box {
+    background: var(--bg-card);
+    border: 1px solid rgba(200,164,86,0.15);
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    text-align: center;
+    min-width: 120px;
+}
+
+.guide-flow-box .flow-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.guide-flow-box .flow-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.guide-flow-box.flow-highlight {
+    border-color: var(--gold-primary);
+    background: rgba(200,164,86,0.08);
+}
+
+.guide-flow-box.flow-highlight .flow-value {
+    color: var(--gold-primary);
+}
+
+.guide-flow-arrow {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    padding: 0 8px;
+    flex-shrink: 0;
+}
+
+/* ターンフェーズフロー */
+.guide-phase-flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 24px 0;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.guide-phase-step {
+    flex: 1;
+    min-width: 100px;
+    background: var(--bg-card);
+    border: 1px solid rgba(200,164,86,0.1);
+    border-radius: var(--radius-md);
+    padding: 12px 10px;
+    text-align: center;
+    position: relative;
+}
+
+.guide-phase-step .phase-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--gold-primary);
+    color: var(--bg-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.guide-phase-step .phase-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: block;
+}
+
+.guide-phase-step .phase-brief {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    display: block;
+}
+
+.guide-phase-arrow {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--text-muted);
+    padding: 0 4px;
+    flex-shrink: 0;
+}
+
+/* 折りたたみ詳細 */
+.guide-details {
+    margin: 12px 0;
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.guide-details summary {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background var(--transition-fast);
+}
+
+.guide-details summary::-webkit-details-marker { display: none; }
+
+.guide-details summary::before {
+    content: '▶';
+    font-size: 0.65rem;
+    color: var(--gold-primary);
+    transition: transform var(--transition-fast);
+}
+
+.guide-details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.guide-details summary:hover {
+    background: rgba(255,255,255,0.03);
+}
+
+.guide-details .details-body {
+    padding: 0 16px 16px;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.guide-details .details-body p {
+    margin: 0 0 8px;
+}
+
+/* 戦闘ステップ */
+.guide-combat-steps {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: combat-step;
+}
+
+.guide-combat-step {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.guide-combat-step::before {
+    counter-increment: combat-step;
+    content: counter(combat-step);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 50%;
+    background: var(--gold-primary);
+    color: var(--bg-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.guide-combat-step::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 36px;
+    bottom: -16px;
+    width: 2px;
+    background: rgba(200,164,86,0.15);
+}
+
+.guide-combat-step:last-child::after {
+    display: none;
+}
+
+.guide-combat-step .step-content {
+    flex: 1;
+    padding-top: 4px;
+}
+
+.guide-combat-step .step-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.guide-combat-step .step-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* 得点比較カード */
+.guide-score-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.guide-score-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(200,164,86,0.12);
+    border-radius: var(--radius-lg);
+    padding: 24px 20px;
+    text-align: center;
+}
+
+.guide-score-card .score-icon {
+    font-size: 2.4rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.guide-score-card .score-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.guide-score-card .score-name-en {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.guide-score-card .score-timing {
+    font-size: 0.8rem;
+    color: var(--gold-primary);
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+.guide-score-card .score-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* 誘導リンクカード */
+.guide-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.guide-link-card {
+    display: block;
+    background: var(--bg-card);
+    border: 1px solid rgba(200,164,86,0.1);
+    border-radius: var(--radius-md);
+    padding: 24px 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: all var(--transition-fast);
+}
+
+.guide-link-card:hover {
+    border-color: var(--gold-primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+}
+
+.guide-link-card .link-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.guide-link-card .link-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.guide-link-card .link-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ========== ガイドページ レスポンシブ ========== */
+@media (max-width: 1024px) {
+    .guide-toc {
+        display: none;
+    }
+
+    .guide-toc-mobile {
+        display: block;
+        margin: 0 auto;
+        padding: 0 24px 24px;
+        max-width: 860px;
+    }
+
+    .guide-layout {
+        display: block;
+        max-width: 860px;
+        padding: calc(var(--nav-height) + 16px) 24px 60px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .guide-toc-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .guide-hero {
+        padding: calc(var(--nav-height) + 24px) 16px 24px;
+    }
+
+    .guide-hero-title {
+        font-size: 1.5rem;
+    }
+
+    .guide-layout {
+        padding: 16px 16px 48px;
+    }
+
+    .guide-section-title {
+        font-size: 1.25rem;
+    }
+
+    .guide-deck-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .guide-domain-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .guide-type-list {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-phase-flow {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .guide-phase-arrow {
+        justify-content: center;
+        transform: rotate(90deg);
+        padding: 4px 0;
+    }
+
+    .guide-score-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-links-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-resource-flow {
+        flex-direction: column;
+    }
+
+    .guide-flow-arrow {
+        transform: rotate(90deg);
+        padding: 4px 0;
+    }
+
+    .guide-toc-mobile {
+        padding: 0 16px 16px;
+    }
+}
+
+/* 目次モバイル版 */
+.guide-toc-mobile {
+    background: var(--bg-card);
+    border: 1px solid rgba(200,164,86,0.1);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.guide-toc-mobile summary {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    list-style: none;
+}
+
+.guide-toc-mobile summary::-webkit-details-marker { display: none; }
+
+.guide-toc-mobile summary::before {
+    content: '📋 ';
+}
+
+.guide-toc-mobile .toc-list-mobile {
+    list-style: none;
+    padding: 0 16px 12px;
+    margin: 0;
+}
+
+.guide-toc-mobile .toc-list-mobile li {
+    margin: 0;
+}
+
+.guide-toc-mobile .toc-list-mobile a {
+    display: block;
+    padding: 8px 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.guide-toc-mobile .toc-list-mobile a:hover {
+    color: var(--gold-primary);
+}
+
+.guide-toc-mobile .toc-list-mobile li:last-child a {
+    border-bottom: none;
+}
