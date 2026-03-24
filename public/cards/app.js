@@ -542,9 +542,29 @@ function escapeRegex(str) {
 }
 
 /**
- * :rb_xxx: タグからrb_プレフィックスを除去する
- * 例: :rb_might: → :might:, :rb_energy_1: → :energy_1:
+ * :rb_xxx: アイコンタグを読める日本語テキストに置換する
+ * カードデータのアイコンプレースホルダーを表示用に変換
  */
+const ICON_TEXT_MAP = {
+    ':rb_might:': 'マイト',
+    ':rb_exhaust:': '【T】',
+    ':rb_rune_rainbow:': '(任意色)',
+    ':rb_rune_body:': '(ボディ)',
+    ':rb_rune_calm:': '(カーム)',
+    ':rb_rune_chaos:': '(カオス)',
+    ':rb_rune_fury:': '(フューリー)',
+    ':rb_rune_mind:': '(マインド)',
+    ':rb_rune_order:': '(オーダー)',
+    ':rb_energy_0:': '(0)',
+    ':rb_energy_1:': '(1)',
+    ':rb_energy_2:': '(2)',
+    ':rb_energy_3:': '(3)',
+    ':rb_energy_4:': '(4)',
+    ':rb_energy_5:': '(5)',
+    ':rb_energy_6:': '(6)',
+    ':rb_energy_7:': '(7)',
+};
+
 function stripIconPrefix(text) {
-    return text.replace(/:rb_/g, ':');
+    return text.replace(/:rb_[a-z0-9_]+:/g, (match) => ICON_TEXT_MAP[match] || match);
 }
